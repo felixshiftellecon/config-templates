@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  a_config_job:
+    docker:
+      - image: cimg/base:2023.01
+    resource_class: small
+    steps:
+      - run: echo "I'm from config a"
+
+workflows:
+  a_config_workflow:
+    jobs:
+      - a_config_job
